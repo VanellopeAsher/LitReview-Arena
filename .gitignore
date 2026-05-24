@@ -1,0 +1,14 @@
+.env
+__pycache__/
+*.py[cod]
+
+evaluation_results.jsonl
+leaderboard.json
+data/evaluator/outputs*/
+data/evaluator/*checkpoint*.json
+data/evaluator/*stats*.json
+data/evaluator/*results*.json
+data/evaluator/*aggregated*.json
+
+evaluator_aggregated_20260128_183256.json
+rebuttal_dataset_prompt.json
