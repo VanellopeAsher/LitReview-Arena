@@ -1,7 +1,22 @@
+# Secrets and local configuration
 .env
+.env.*
+*.env
+*.key
+*.pem
+*.p12
+*.pfx
+*secret*
+*credentials*
+
+# Python cache
 __pycache__/
 *.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
 
+# Local generated outputs
 evaluation_results.jsonl
 leaderboard.json
 data/evaluator/outputs*/
@@ -12,3 +27,9 @@ data/evaluator/*aggregated*.json
 
 evaluator_aggregated_20260128_183256.json
 rebuttal_dataset_prompt.json
+
+# Editor and OS files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
