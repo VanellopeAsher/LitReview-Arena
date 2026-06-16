@@ -10,6 +10,14 @@
 </p>
 
 <p align="center">
+  <sup>1</sup>Tsinghua University &nbsp;
+  <sup>2</sup>Zhongguancun Academy &nbsp;
+  <sup>3</sup>Zhongguancun Institute of AI &nbsp;
+  <sup>4</sup>Huazhong University of Science and Technology &nbsp;
+  <sup>5</sup>Shanghai Institute of Microsystem and Information Technology
+</p>
+
+<p align="center">
   <strong>Accepted to ICML 2026</strong>
 </p>
 
@@ -19,15 +27,6 @@
   <a href="#litjudge"><img src="https://img.shields.io/badge/Evaluator-LitJudge-15803d" alt="LitJudge"></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="MIT License"></a>
 </p>
-
-<p align="center">
-  <sup>1</sup>Tsinghua University &nbsp;
-  <sup>2</sup>Zhongguancun Academy &nbsp;
-  <sup>3</sup>Zhongguancun Institute of AI &nbsp;
-  <sup>4</sup>Huazhong University of Science and Technology &nbsp;
-  <sup>5</sup>Shanghai Institute of Microsystem and Information Technology
-</p>
-
 
 
 ---
