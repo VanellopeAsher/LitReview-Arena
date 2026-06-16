@@ -1,61 +1,68 @@
 # LitReview Arena
 
-[![ICML 2026](https://img.shields.io/badge/ICML-2026-8A2D1C)](#)
-[![Benchmark](https://img.shields.io/badge/benchmark-LitReviewBench-blue)](#litreviewbench)
-[![Evaluator](https://img.shields.io/badge/evaluator-LitJudge-green)](#litjudge)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+<p align="center">
+  <strong>LitReview Arena: Evaluating Literature Review Agents with Battle-Style Peer Review Platform</strong>
+</p>
 
-Official repository for **LitReview Arena: Evaluating Literature Review Agents with Battle-Style Peer Review Platform**, accepted to **ICML 2026**.
+<p align="center">
+  <a href="https://icml.cc/Conferences/2026"><img src="https://img.shields.io/badge/ICML-2026-8A2D1C" alt="ICML 2026"></a>
+  <a href="#litreviewbench"><img src="https://img.shields.io/badge/Benchmark-LitReviewBench-2563eb" alt="LitReviewBench"></a>
+  <a href="#litjudge"><img src="https://img.shields.io/badge/Evaluator-LitJudge-15803d" alt="LitJudge"></a>
+  <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="MIT License"></a>
+</p>
 
-LitReview Arena studies how to evaluate AI systems that generate scientific literature reviews. Instead of relying on reference overlap or generic LLM judges, the project collects blind pairwise expert preferences over literature-review drafts and converts them into a reproducible offline benchmark, **LitReviewBench**. The repository also includes **LitJudge**, an expert-aligned evaluator calibrated from benchmark preferences.
+<p align="center">
+  <strong>Accepted to ICML 2026</strong>
+</p>
 
-## Highlights
+<p align="center">
+  Ruotong Zhao<sup>1</sup> · Zhiyu Chen<sup>2</sup> · Xurui Liu<sup>1</sup> · Haidong Xue<sup>3</sup> · Dong Liang<sup>4</sup> · Jigao Fu<sup>3</sup> · Yanbiao Wu<sup>5</sup> · Yuanyi Zhen<sup>2</sup> · Fengli Xu<sup>1</sup> · Yong Li<sup>1</sup>
+</p>
 
-- **ICML 2026 accepted paper** on expert preference evaluation for literature review agents.
-- **LitReviewBench**, a frozen arena-grounded benchmark with dimension-wise expert outcomes.
-- **Five review-specific dimensions**: Literature Coverage, Claim Support, Paper Structure, Research Suggestions, and Overall Utility.
-- **LitJudge**, an expert-aligned evaluator using structure-matched examples, content-matched examples, and diversity-aware expert gap anchors.
-- **Reproducible scripts** for loading battle records, computing leaderboards, and running calibrated or naive evaluator variants.
+<p align="center">
+  <sup>1</sup>Tsinghua University &nbsp;
+  <sup>2</sup>Zhongguancun Academy &nbsp;
+  <sup>3</sup>Zhongguancun Institute of AI &nbsp;
+  <sup>4</sup>Huazhong University of Science and Technology &nbsp;
+  <sup>5</sup>Shanghai Institute of Microsystem and Information Technology
+</p>
 
-## Repository Layout
+---
 
-```text
-LitReview-Arena/
-├── README.md
-├── requirements.txt
-├── data/
-│   ├── battles.jsonl                    # AI-domain paired comparison records
-│   ├── expert_outcomes.jsonl            # Dimension-wise expert outcomes
-│   ├── topics.jsonl                     # Normalized topic queries and taxonomy tags
-│   └── evaluator/
-│       ├── litjudge_context_cache.jsonl
-│       └── litjudge_context_cache_mmr.jsonl
-├── evaluator/
-│   ├── main.py                          # LitJudge / naive judge entry point
-│   ├── context_builder.py               # Structure/content/gap context construction
-│   ├── naive_judge.py                   # Uncalibrated judge baseline
-│   ├── judge.py                         # LLM judge wrapper
-│   ├── aggregator.py                    # Agreement and leaderboard aggregation
-│   └── bt_model.py                      # Pairwise preference scoring utilities
-├── scripts/
-│   └── compute_leaderboard.py           # Compute dimension-wise leaderboards
-├── examples/
-│   └── simple_agent.py                  # Minimal literature review agent
-└── docs/
-    ├── data_format.md
-    ├── evaluation_protocol.md
-    └── calibration_guide.md
-```
+LitReview Arena studies how to evaluate AI systems that generate scientific literature reviews. Instead of relying on reference overlap or generic LLM judges, we collect blind pairwise expert preferences over literature-review drafts and convert them into a reproducible offline benchmark, **LitReviewBench**. The repository also includes **LitJudge**, an expert-aligned evaluator calibrated from benchmark preferences.
+
+## News
+
+- **ICML 2026**: LitReview Arena was accepted to the 43rd International Conference on Machine Learning.
+- **Public artifact**: This repository releases the benchmark data, evaluation protocol, leaderboard scripts, and LitJudge implementation.
+
+## Overview
+
+| Component           | Description                                                                                                     |
+| ------------------- | --------------------------------------------------------------------------------------------------------------- |
+| **LitReview Arena** | Battle-style expert evaluation platform for literature review agents.                                           |
+| **LitReviewBench**  | Frozen benchmark distilled from arena logs with dimension-wise expert outcomes.                                 |
+| **LitJudge**        | Expert-aligned evaluator using structure-matched cases, content-matched cases, and diversity-aware gap anchors. |
+
+The evaluation protocol uses five literature-review-specific dimensions:
+
+| Dimension | Name                 | Question                                                                           |
+| --------- | -------------------- | ---------------------------------------------------------------------------------- |
+| D1        | Literature Coverage  | Which draft cites a more complete and appropriate set of relevant papers?          |
+| D2        | Claim Support        | Which draft better grounds key claims in the cited literature?                     |
+| D3        | Paper Structure      | Which draft better organizes prior work into meaningful categories or comparisons? |
+| D4        | Research Suggestions | Which draft provides more important, non-obvious, and useful future directions?    |
+| D5        | Overall Utility      | Which draft would a researcher prefer as a starting point for a literature review? |
 
 ## LitReviewBench
 
 The current public snapshot contains:
 
-| File | Records | Description |
-| --- | ---: | --- |
-| `data/battles.jsonl` | 2,754 | AI-domain paired draft comparisons |
-| `data/expert_outcomes.jsonl` | 2,754 | One dimension-wise expert judgment per battle |
-| `data/topics.jsonl` | 925 | Normalized topic queries with field/subfield tags |
+| File                         | Records | Description                                       |
+| ---------------------------- | -------:| ------------------------------------------------- |
+| `data/battles.jsonl`         | 2,754   | AI-domain paired draft comparisons                |
+| `data/expert_outcomes.jsonl` | 2,754   | One dimension-wise expert judgment per battle     |
+| `data/topics.jsonl`          | 925     | Normalized topic queries with field/subfield tags |
 
 Each expert outcome uses a four-way label for each dimension:
 
@@ -64,102 +71,39 @@ Each expert outcome uses a four-way label for each dimension:
 - `Tie`: both drafts are comparably good.
 - `BothBad`: neither draft is acceptable on that dimension.
 
-The five dimensions follow the paper protocol:
-
-| Dimension | Name | Question |
-| --- | --- | --- |
-| D1 | Literature Coverage | Which draft cites a more complete and appropriate set of relevant papers? |
-| D2 | Claim Support | Which draft better grounds key claims in the cited literature? |
-| D3 | Paper Structure | Which draft better organizes prior work into meaningful categories or comparisons? |
-| D4 | Research Suggestions | Which draft provides more important, non-obvious, and useful future directions? |
-| D5 | Overall Utility | Which draft would a researcher prefer as a starting point for a literature review? |
-
 Detailed schemas are in [docs/data_format.md](docs/data_format.md), and the annotation protocol is in [docs/evaluation_protocol.md](docs/evaluation_protocol.md).
 
-## Quick Start
+## Repository Layout
 
-Install dependencies:
-
-```bash
-pip install -r requirements.txt
+```text
+LitReview-Arena/
+├── README.md
+├── requirements.txt
+├── data/
+│   ├── battles.jsonl
+│   ├── expert_outcomes.jsonl
+│   ├── topics.jsonl
+│   └── evaluator/
+│       ├── litjudge_context_cache.jsonl
+│       └── litjudge_context_cache_mmr.jsonl
+├── evaluator/
+│   ├── main.py
+│   ├── context_builder.py
+│   ├── naive_judge.py
+│   ├── judge.py
+│   ├── aggregator.py
+│   └── bt_model.py
+├── scripts/
+│   └── compute_leaderboard.py
+├── examples/
+│   └── simple_agent.py
+└── docs/
+    ├── data_format.md
+    ├── evaluation_protocol.md
+    └── calibration_guide.md
 ```
-
-Load the benchmark:
-
-```python
-import json
-from pathlib import Path
-
-def load_jsonl(path):
-    with Path(path).open("r", encoding="utf-8") as f:
-        return [json.loads(line) for line in f if line.strip()]
-
-battles = load_jsonl("data/battles.jsonl")
-outcomes = load_jsonl("data/expert_outcomes.jsonl")
-topics = load_jsonl("data/topics.jsonl")
-
-print(len(battles), len(outcomes), len(topics))
-```
-
-Compute a D5 leaderboard from expert outcomes:
-
-```bash
-python scripts/compute_leaderboard.py \
-  --outcomes data/expert_outcomes.jsonl \
-  --battles data/battles.jsonl \
-  --method elo \
-  --dimension D5
-```
-
-Run the naive judge baseline on a selected subset:
-
-```bash
-python -m evaluator.main \
-  --battles-file data/battles.jsonl \
-  --expert-outcomes-file data/expert_outcomes.jsonl \
-  --naive \
-  --max-workers 4
-```
-
-Run LitJudge with diversity-aware retrieval:
-
-```bash
-python -m evaluator.main \
-  --battles-file data/battles.jsonl \
-  --expert-outcomes-file data/expert_outcomes.jsonl \
-  --diverse-retrieval \
-  --context-cache-file data/evaluator/litjudge_context_cache_mmr.jsonl \
-  --max-workers 4
-```
-
-Set an API key before running evaluator calls:
-
-```bash
-export OPENAI_API_KEY=...
-# or
-export OPENROUTER_API_KEY=...
-```
-
-On Windows PowerShell:
-
-```powershell
-$env:OPENAI_API_KEY="..."
-```
-
-## LitJudge
-
-LitJudge is the calibrated evaluator introduced in the paper. It builds a task-specific context for each pairwise comparison:
-
-- **Group S, structure-similar cases**: examples retrieved by structural similarity for Paper Structure (D3).
-- **Group C, content-similar cases**: topic-neighbor examples for Literature Coverage (D1) and Claim Support (D2).
-- **Group G, gap anchors**: expert-written research-gap exemplars for Research Suggestions (D4), selected with diversity-aware retrieval.
-
-The paper reports that calibration improves alignment with expert-induced leaderboards, especially on synthesis-heavy dimensions such as Paper Structure and Research Suggestions. Cross-base-model and random few-shot controls are included in the appendix and supported by the evaluator scripts.
-
 
 ## Citation
-
-BibTeX will be updated after the official ICML 2026/PMLR metadata is available.
 
 ```bibtex
 @inproceedings{zhao2026litreviewarena,
@@ -172,7 +116,7 @@ BibTeX will be updated after the official ICML 2026/PMLR metadata is available.
 
 ## Contact
 
-For questions, open a GitHub issue or contact the corresponding author listed in the paper.
+For questions, please open a GitHub issue or contact the corresponding author listed in the paper.
 
 ## License
 
