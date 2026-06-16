@@ -4,16 +4,6 @@
   <strong>LitReview Arena: Evaluating Literature Review Agents with Battle-Style Peer Review Platform</strong>
 </p>
 
-<p align="center">
-  <a href="https://icml.cc/Conferences/2026"><img src="https://img.shields.io/badge/ICML-2026-8A2D1C" alt="ICML 2026"></a>
-  <a href="#litreviewbench"><img src="https://img.shields.io/badge/Benchmark-LitReviewBench-2563eb" alt="LitReviewBench"></a>
-  <a href="#litjudge"><img src="https://img.shields.io/badge/Evaluator-LitJudge-15803d" alt="LitJudge"></a>
-  <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="MIT License"></a>
-</p>
-
-<p align="center">
-  <strong>Accepted to ICML 2026</strong>
-</p>
 
 <p align="center">
   Ruotong Zhao<sup>1</sup> · Zhiyu Chen<sup>2</sup> · Xurui Liu<sup>1</sup> · Haidong Xue<sup>3</sup> · Dong Liang<sup>4</sup> · Jigao Fu<sup>3</sup> · Yanbiao Wu<sup>5</sup> · Yuanyi Zhen<sup>2</sup> · Fengli Xu<sup>1</sup> · Yong Li<sup>1</sup>
@@ -26,6 +16,18 @@
   <sup>4</sup>Huazhong University of Science and Technology &nbsp;
   <sup>5</sup>Shanghai Institute of Microsystem and Information Technology
 </p>
+
+<p align="center">
+  <strong>Accepted to ICML 2026</strong>
+</p>
+
+<p align="center">
+  <a href="https://icml.cc/Conferences/2026"><img src="https://img.shields.io/badge/ICML-2026-8A2D1C" alt="ICML 2026"></a>
+  <a href="#litreviewbench"><img src="https://img.shields.io/badge/Benchmark-LitReviewBench-2563eb" alt="LitReviewBench"></a>
+  <a href="#litjudge"><img src="https://img.shields.io/badge/Evaluator-LitJudge-15803d" alt="LitJudge"></a>
+  <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="MIT License"></a>
+</p>
+
 
 ---
 
