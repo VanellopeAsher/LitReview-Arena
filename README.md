@@ -6,15 +6,13 @@
 
 
 <p align="center">
-  Ruotong Zhao<sup>1</sup> · Zhiyu Chen<sup>2</sup> · Xurui Liu<sup>1</sup> · Haidong Xue<sup>3</sup> · Dong Liang<sup>4</sup> · Jigao Fu<sup>3</sup> · Yanbiao Wu<sup>5</sup> · Yuanyi Zhen<sup>2</sup> · Fengli Xu<sup>1</sup> · Yong Li<sup>1</sup>
+  Ruotong Zhao<sup>1</sup> · Zhiyu Chen<sup>1</sup><sup>3</sup> · Xurui Liu<sup>1</sup> · Haidong Xue<sup>2</sup> · Dong Liang<sup>2</sup> · Jigao Fu<sup>2</sup> · Yanbiao Wu<sup>2</sup> · Yuanyi Zhen<sup>2</sup> · Fengli Xu<sup>1</sup> · Yong Li<sup>1</sup>
 </p>
 
 <p align="center">
   <sup>1</sup>Tsinghua University &nbsp;
   <sup>2</sup>Zhongguancun Academy &nbsp;
-  <sup>3</sup>Zhongguancun Institute of AI &nbsp;
-  <sup>4</sup>Huazhong University of Science and Technology &nbsp;
-  <sup>5</sup>Shanghai Institute of Microsystem and Information Technology
+  <sup>3</sup>Fudan University &nbsp;
 </p>
 
 <p align="center">
